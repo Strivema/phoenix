@@ -93,6 +93,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.30</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -107,7 +112,7 @@
             <!--<resource>-->
                 <!--<directory>src/main/java</directory>-->
                 <!--<includes>-->
-                    <!--<include>**/map/*.xml</include>-->
+                    <!--<include>**/mapper/*.xml</include>-->
                 <!--</includes>-->
                 <!--<filtering>false</filtering>-->
             <!--</resource>-->

@@ -37,25 +37,6 @@ public class SysLoginLog extends BaseEntity implements Serializable {
      */
     private String ip;
 
-    /**
-     * 创建人
-     */
-    private String createBy;
-
-    /**
-     * 创建时间
-     */
-    private LocalDateTime createTime;
-
-    /**
-     * 更新人
-     */
-    private String lastUpdateBy;
-
-    /**
-     * 更新时间
-     */
-    private LocalDateTime lastUpdateTime;
 
 
 }

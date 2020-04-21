@@ -33,26 +33,6 @@ public class SysRole extends BaseEntity implements Serializable {
     private String remark;
 
     /**
-     * 创建人
-     */
-    private String createBy;
-
-    /**
-     * 创建时间
-     */
-    private LocalDateTime createTime;
-
-    /**
-     * 更新人
-     */
-    private String lastUpdateBy;
-
-    /**
-     * 更新时间
-     */
-    private LocalDateTime lastUpdateTime;
-
-    /**
      * 是否删除  -1：已删除  0：正常
      */
     private Integer delFlag;

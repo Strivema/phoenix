@@ -57,25 +57,6 @@ public class SysMenu extends BaseEntity implements Serializable {
      */
     private Integer orderNum;
 
-    /**
-     * 创建人
-     */
-    private String createBy;
-
-    /**
-     * 创建时间
-     */
-    private LocalDateTime createTime;
-
-    /**
-     * 更新人
-     */
-    private String lastUpdateBy;
-
-    /**
-     * 更新时间
-     */
-    private LocalDateTime lastUpdateTime;
 
     /**
      * 是否删除  -1：已删除  0：正常

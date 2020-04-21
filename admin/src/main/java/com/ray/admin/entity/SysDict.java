@@ -48,25 +48,6 @@ public class SysDict extends BaseEntity implements Serializable {
      */
     private BigDecimal sort;
 
-    /**
-     * 创建人
-     */
-    private String createBy;
-
-    /**
-     * 创建时间
-     */
-    private LocalDateTime createTime;
-
-    /**
-     * 更新人
-     */
-    private String lastUpdateBy;
-
-    /**
-     * 更新时间
-     */
-    private LocalDateTime lastUpdateTime;
 
     /**
      * 备注信息

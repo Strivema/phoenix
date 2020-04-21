@@ -1,9 +1,9 @@
 package com.ray.admin.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.ray.admin.admin.entity.SysLoginLog;
-import com.ray.admin.admin.mapper.SysLoginLogMapper;
-import com.ray.admin.admin.service.ISysLoginLogService;
+import com.ray.admin.entity.SysLoginLog;
+import com.ray.admin.mapper.SysLoginLogMapper;
+import com.ray.admin.service.ISysLoginLogService;
 import org.springframework.stereotype.Service;
 
 /**

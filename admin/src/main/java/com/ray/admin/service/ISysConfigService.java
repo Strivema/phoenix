@@ -11,6 +11,7 @@ import com.ray.admin.entity.SysConfig;
  * @author Marie
  * @since 2020-04-19
  */
+
 public interface ISysConfigService extends IService<SysConfig> {
 
 }

@@ -6,6 +6,8 @@ import com.ray.admin.mapper.SysConfigMapper;
 import com.ray.admin.service.ISysConfigService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  * 系统配置表 服务实现类
@@ -17,4 +19,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class SysConfigServiceImpl extends ServiceImpl<SysConfigMapper, SysConfig> implements ISysConfigService {
 
+    @Override
+    public List<SysConfig> findByLable(String lable) {
+        return null;
+    }
+
+    @Override
+    public int delete(List<SysConfig> records) {
+        return 0;
+    }
+
+    @Override
+    public int delete(SysConfig records) {
+        return 0;
+    }
 }

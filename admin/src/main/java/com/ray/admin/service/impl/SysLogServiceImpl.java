@@ -6,6 +6,8 @@ import com.ray.admin.mapper.SysLogMapper;
 import com.ray.admin.service.ISysLogService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  * 系统操作日志 服务实现类
@@ -17,4 +19,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class SysLogServiceImpl extends ServiceImpl<SysLogMapper, SysLog> implements ISysLogService {
 
+    @Override
+    public int delete(List<SysLog> records) {
+        return 0;
+    }
+
+    @Override
+    public int delete(SysLog record) {
+        return 0;
+    }
 }

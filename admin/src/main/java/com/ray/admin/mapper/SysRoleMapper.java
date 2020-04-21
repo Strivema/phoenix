@@ -2,6 +2,8 @@ package com.ray.admin.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.ray.admin.entity.SysRole;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Component;
 
 /**
  * <p>
@@ -11,6 +13,7 @@ import com.ray.admin.entity.SysRole;
  * @author Marie
  * @since 2020-04-19
  */
+@Component
 public interface SysRoleMapper extends BaseMapper<SysRole> {
 
 }

@@ -6,6 +6,8 @@ import com.ray.admin.mapper.SysDeptMapper;
 import com.ray.admin.service.ISysDeptService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  * 机构管理 服务实现类
@@ -17,4 +19,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class SysDeptServiceImpl extends ServiceImpl<SysDeptMapper, SysDept> implements ISysDeptService {
 
+    @Override
+    public int delete(SysDept record) {
+        return 0;
+    }
+
+    @Override
+    public int delete(List<SysDept> records) {
+        return 0;
+    }
+
+    @Override
+    public List<SysDept> findTree() {
+        return null;
+    }
 }

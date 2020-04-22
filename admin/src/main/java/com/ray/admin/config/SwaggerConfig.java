@@ -31,11 +31,11 @@ public class SwaggerConfig {
         parameterBuilder.name("token").description("令牌")
                 .modelRef(new ModelRef("string")).parameterType("header").required(false).build();
         parameters.add(parameterBuilder.build());
-        return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select()
-                .apis(RequestHandlerSelectors.any()).paths(PathSelectors.any())
-                .build().globalOperationParameters(parameters);
 //        return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select()
-//        		.apis(RequestHandlerSelectors.any()).paths(PathSelectors.any()).build();
+//                .apis(RequestHandlerSelectors.any()).paths(PathSelectors.any())
+//                .build().globalOperationParameters(parameters);
+        return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select()
+                .apis(RequestHandlerSelectors.any()).paths(PathSelectors.any()).build();
     }
 
     private ApiInfo apiInfo() {

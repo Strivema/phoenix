@@ -2,4 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ray.admin.mapper.SysConfigMapper">
 
+    <select id="findByLable" resultType="com.ray.admin.entity.SysConfig">
+
+    </select>
+    <select id="selectPageVo" resultType="com.ray.admin.entity.SysConfig">
+
+    </select>
 </mapper>

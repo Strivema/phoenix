@@ -1,5 +1,7 @@
 package com.ray.admin.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.ray.admin.entity.SysConfig;
 
@@ -21,6 +23,8 @@ public interface ISysConfigService extends IService<SysConfig> {
     int delete(List<SysConfig> records);
 
     int delete(SysConfig records);
+
+    IPage<SysConfig> page(Page<SysConfig> page);
 
 
 }

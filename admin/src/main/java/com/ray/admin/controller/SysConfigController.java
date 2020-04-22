@@ -29,17 +29,18 @@ public class SysConfigController {
     public HttpResult save(@RequestBody SysConfig record) {
         return HttpResult.ok(sysConfigService.save(record));
     }
-    @PostMapping(value="/delete")
+
+    @PostMapping(value = "/delete")
     public HttpResult delete(@RequestBody List<SysConfig> records) {
         return HttpResult.ok(sysConfigService.delete(records));
     }
 
-    @PostMapping(value="/findPage")
+    @PostMapping(value = "/findPage")
     public HttpResult findPage(@RequestBody Page<SysConfig> page) {
         return HttpResult.ok(sysConfigService.page(page));
     }
 
-    @GetMapping(value="/findByLable")
+    @GetMapping(value = "/findByLable")
     public HttpResult findByLable(@RequestParam String lable) {
         return HttpResult.ok(sysConfigService.findByLable(lable));
     }

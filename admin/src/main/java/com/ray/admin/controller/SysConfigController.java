@@ -40,8 +40,8 @@ public class SysConfigController {
         return HttpResult.ok(sysConfigService.page(page));
     }
 
-    @GetMapping(value = "/findByLable")
-    public HttpResult findByLable(@RequestParam String lable) {
-        return HttpResult.ok(sysConfigService.findByLable(lable));
+    @GetMapping(value = "/findByLabel")
+    public HttpResult findByLabel(@RequestParam String label) {
+        return HttpResult.ok(sysConfigService.findByLabel(label));
     }
 }

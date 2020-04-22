@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.ray.admin.entity.SysConfig;
 import com.ray.admin.mapper.SysConfigMapper;
 import com.ray.admin.service.ISysConfigService;
+import com.ray.core.exception.PhoenixException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,8 +28,8 @@ public class SysConfigServiceImpl extends ServiceImpl<SysConfigMapper, SysConfig
     private SysConfigMapper sysConfigMapper;
 
     @Override
-    public List<SysConfig> findByLable(String lable) {
-        return sysConfigMapper.findByLable(lable);
+    public List<SysConfig> findByLabel(String label) {
+        return sysConfigMapper.findByLabel(label);
     }
 
     @Override
@@ -41,11 +42,23 @@ public class SysConfigServiceImpl extends ServiceImpl<SysConfigMapper, SysConfig
 
     @Override
     public int delete(SysConfig record) {
+        if (null == record.getId()) {
+
+        }
         return sysConfigMapper.deleteById(record.getId());
     }
 
 
     public IPage<SysConfig> page(Page<SysConfig> page) {
+
         return sysConfigMapper.selectPageVo(page, page.getRecords().get(0).getLabel());
     }
+
+    public boolean save(SysConfig record) {
+        if (null == record || record.getId() == 0) {
+            return sysConfigMapper.save(record);
+        }
+        return sysConfigMapper.updateByPrimaryKey(record);
+    }
+
 }

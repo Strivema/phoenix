@@ -18,7 +18,7 @@ import java.util.List;
 
 public interface ISysConfigService extends IService<SysConfig> {
 
-    List<SysConfig> findByLable(String lable);
+    List<SysConfig> findByLabel(String label);
 
     int delete(List<SysConfig> records);
 

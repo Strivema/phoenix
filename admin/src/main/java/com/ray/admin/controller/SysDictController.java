@@ -30,7 +30,7 @@ public class SysDictController {
 
     @PostMapping(value = "/save")
     public HttpResult save(@RequestBody SysDict record) {
-        return HttpResult.ok(sysDictService.save(record));
+        return HttpResult.ok(sysDictService.saveOrUpdate(record));
     }
 
     @PostMapping(value = "/delete")
@@ -43,8 +43,8 @@ public class SysDictController {
         return HttpResult.ok(sysDictService.page(pageRequest));
     }
 
-    @GetMapping(value = "/findByLable")
-    public HttpResult findByLable(@RequestParam String lable) {
-        return HttpResult.ok(sysDictService.findByLable(lable));
+    @GetMapping(value = "/findByLabel")
+    public HttpResult findByLabel(@RequestParam String label) {
+        return HttpResult.ok(sysDictService.findByLabel(label));
     }
 }

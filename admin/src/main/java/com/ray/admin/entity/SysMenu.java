@@ -6,6 +6,7 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * <p>
@@ -62,6 +63,13 @@ public class SysMenu extends BaseEntity implements Serializable {
      * 是否删除  -1：已删除  0：正常
      */
     private Integer delFlag;
+
+    // 非数据库字段
+    private List<SysMenu> children;
+    // 非数据库字段
+    private String parentName;
+    // 非数据库字段
+    private Integer level;
 
 
 }

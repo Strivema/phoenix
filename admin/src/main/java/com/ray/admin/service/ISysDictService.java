@@ -18,6 +18,6 @@ public interface ISysDictService extends IService<SysDict> {
 
     int delete(List<SysDict> records);
 
-    List<SysDict> findByLable(String lable);
+    List<SysDict> findByLabel(String label);
 
 }

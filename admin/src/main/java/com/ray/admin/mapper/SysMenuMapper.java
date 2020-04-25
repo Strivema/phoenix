@@ -18,4 +18,6 @@ import java.util.List;
 public interface SysMenuMapper extends BaseMapper<SysMenu> {
 
     List<SysMenu> selectByUser(String name);
+
+    List<SysMenu> findRoleMenus(long id);
 }

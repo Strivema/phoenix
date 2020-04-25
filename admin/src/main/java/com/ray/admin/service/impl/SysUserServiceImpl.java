@@ -1,11 +1,16 @@
 package com.ray.admin.service.impl;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.ray.admin.entity.SysUser;
 import com.ray.admin.entity.SysUserRole;
+import com.ray.admin.mapper.SysMenuMapper;
+import com.ray.admin.mapper.SysRoleMapper;
 import com.ray.admin.mapper.SysUserMapper;
+import com.ray.admin.mapper.SysUserRoleMapper;
 import com.ray.admin.service.ISysUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -23,19 +28,28 @@ import java.util.Set;
 @Service
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements ISysUserService {
 
+    @Autowired
+    private SysUserMapper sysUserMapper;
+    @Autowired
+    private SysMenuMapper sysMenuMapper;
+    @Autowired
+    private SysUserRoleMapper sysUserRoleMapper;
+    @Autowired
+    private SysRoleMapper sysRoleMapper;
+
     @Override
     public int delete(SysUser record) {
-        return 0;
+        return sysUserMapper.deleteById(record.getId());
     }
 
     @Override
     public int delete(List<SysUser> records) {
-        return 0;
+        return sysUserMapper.deleteBatchIds(records);
     }
 
     @Override
     public SysUser getByName(String username) {
-        return null;
+        return sysUserMapper.seleclByName(username);
     }
 
     @Override
@@ -50,6 +64,11 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
     @Override
     public File createUserExcelFile(Page pageRequest) {
+        return null;
+    }
+
+    @Override
+    public IPage<SysUser> page(IPage<SysUser> page) {
         return null;
     }
 }

@@ -1,6 +1,7 @@
 package com.ray.admin.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.ray.admin.entity.SysMenu;
 import com.ray.admin.entity.SysRole;
 import com.ray.admin.entity.SysRoleMenu;
 
@@ -21,9 +22,10 @@ public interface ISysRoleService extends IService<SysRole> {
 
     int delete(List<SysRole> records);
 
-    List<SysRole> findRoleMenus(long id);
+    List<SysMenu> findRoleMenus(long id);
 
     int saveRoleMenus(List<SysRoleMenu> records);
 
 
+    List<SysRole> findAll();
 }

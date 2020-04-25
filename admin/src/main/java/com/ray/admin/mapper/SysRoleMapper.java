@@ -5,6 +5,8 @@ import com.ray.admin.entity.SysRole;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * <p>
  * 角色管理 Mapper 接口
@@ -16,4 +18,5 @@ import org.springframework.stereotype.Component;
 @Component
 public interface SysRoleMapper extends BaseMapper<SysRole> {
 
+    List<SysRole> selectByName(String name);
 }

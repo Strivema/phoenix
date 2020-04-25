@@ -56,7 +56,7 @@ public class SysRoleController {
 
     @GetMapping(value = "/findAll")
     public HttpResult findAll() {
-        return HttpResult.ok(sysRoleService.getBaseMapper());
+        return HttpResult.ok(sysRoleService.findAll());
     }
 
     @GetMapping(value = "/findRoleMenus")

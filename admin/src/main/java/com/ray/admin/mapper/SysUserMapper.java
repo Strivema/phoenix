@@ -15,4 +15,5 @@ import org.springframework.stereotype.Component;
 @Component
 public interface SysUserMapper extends BaseMapper<SysUser> {
 
+    SysUser seleclByName(String username);
 }

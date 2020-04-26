@@ -10,4 +10,7 @@
         <include refid="Base_Column_List"/>
         from sys_role where name = #{name}
     </select>
+    <select id="selectPageVo" resultType="com.baomidou.mybatisplus.extension.plugins.pagination.Page">
+
+    </select>
 </mapper>

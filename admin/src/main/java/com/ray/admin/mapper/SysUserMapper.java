@@ -1,6 +1,8 @@
 package com.ray.admin.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ray.admin.entity.SysUser;
 import org.springframework.stereotype.Component;
 
@@ -15,5 +17,10 @@ import org.springframework.stereotype.Component;
 @Component
 public interface SysUserMapper extends BaseMapper<SysUser> {
 
-    SysUser seleclByName(String username);
+    SysUser selectByName(String username);
+
+    IPage<SysUser> selectPageVo(IPage<SysUser> page, String name, String email);
+
+    IPage<SysUser> selectByPageName(IPage<SysUser> page, String name);
+
 }

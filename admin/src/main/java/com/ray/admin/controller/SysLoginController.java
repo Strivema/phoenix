@@ -12,6 +12,7 @@ import com.ray.common.utils.PasswordUtils;
 import com.ray.core.http.HttpResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -40,6 +41,7 @@ public class SysLoginController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    @GetMapping("captcha")
     public void captcha(HttpServletResponse response, HttpServletRequest request) throws IOException {
         response.setHeader("Cache-Control", "no-store, no-cache");
         response.setContentType("image/jpeg");

@@ -8,6 +8,7 @@ import com.ray.admin.service.ISysUserService;
 import com.ray.common.utils.FileUtils;
 import com.ray.core.http.HttpResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
@@ -28,6 +29,7 @@ public class SysUserController {
     @Autowired
     private ISysUserService sysUserService;
 
+    @PreAuthorize("hasPermission('sys:user:add') and hasPermission('sys:user:edit')")
     @PostMapping(value = "/save")
     public HttpResult save(@RequestBody SysUser record) {
         SysUser user = sysUserService.getById(record.getId());
@@ -58,6 +60,7 @@ public class SysUserController {
         return HttpResult.ok(sysUserService.save(record));
     }
 
+    @PreAuthorize("hasPermission('sys:user:delete')")
     @PostMapping(value = "/delete")
     public HttpResult delete(@RequestBody List<SysUser> records) {
         for (SysUser record : records) {
@@ -69,25 +72,30 @@ public class SysUserController {
         return HttpResult.ok(sysUserService.delete(records));
     }
 
+    @PreAuthorize("hasPermission('sys:user:view')")
     @GetMapping(value = "/findByName")
     public HttpResult findByName(@RequestParam String name) {
         return HttpResult.ok(sysUserService.getByName(name));
     }
 
+    @PreAuthorize("hasPermission('sys:user:view')")
     @GetMapping(value = "/findPermissions")
     public HttpResult findPermissions(@RequestParam String name) {
         return HttpResult.ok(sysUserService.findPermissions(name));
     }
 
+    @PreAuthorize("hasPermission('sys:user:view')")
     @GetMapping(value = "/findUserRoles")
     public HttpResult findUserRoles(@RequestParam Long userId) {
         return HttpResult.ok(sysUserService.findUserRoles(userId));
     }
 
+    @PreAuthorize("hasPermission('sys:user:view')")
     @PostMapping(value = "/findPage")
     public HttpResult findPage(@RequestBody Page<SysUser> pageRequest) {
         return HttpResult.ok(sysUserService.page(pageRequest));
     }
+
 
     @PostMapping(value = "/exportExcelUser")
     public void exportExcelUser(@RequestBody Page<SysUser> pageRequest, HttpServletResponse res) {
